@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hodowla: Poradnik (Odmiana MVP)</title>
+    <style>
+        /* Spokojny, domyślny motyw */
+        :root {
+            --bg-color: #f4f1ea;
+            --text-color: #333333;
+            --heading-color: #2c5e3b;
+            --accent-color: #4a90e2;
+            --container-bg: #ffffff;
+        }
+
+        /* Tryb wysokiego kontrastu (Accessibility) */
+        body.high-contrast {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --heading-color: #ffff00;
+            --accent-color: #00ff00;
+            --container-bg: #111111;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .container {
+            max-width: 800px;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 { color: var(--heading-color); }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--heading-color);
+            color: var(--container-bg);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 2px solid transparent;
+        }
+        .btn:focus {
+            outline: 3px solid var(--accent-color);
+        }
+        
+        .contrast-toggle {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .explanation {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="contrast-toggle" onclick="toggleContrast()" aria-label="Przełącz tryb wysokiego kontrastu">🌓 Przełącz Tryb Wysokiego Kontrastu</button>
+        
+        <h1>Jak skutecznie prowadzić uprawę w growbagach?</h1>
+        
+        <h2>Odmiana MVP: To nie zabawa</h2>
+        <p>Jeśli zaczynasz, wybierz standardowe gatunki. Jeśli jednak decydujesz się na odmianę <strong>MVP</strong>, pamiętaj o jednym: <em>Odmiana MVP nie puka grzecznie do drzwi. MVP z buta wywala zamek, wjeżdża z całą futryną, a na koniec bez pytania przejmuje akt własności twojego umysłu!</em></p>
+        <p>Moc tego gatunku jest nieporównywalna z innymi. W praktyce oznacza to, że <strong>2g odmiany MVP działa dokładnie tak samo, jak 4g słabszych gatunków</strong>. Dawkowanie należy traktować z najwyższym szacunkiem.</p>
+
+        <h2>Zasady uprawy: Growbagi krok po kroku</h2>
+        <ul>
+            <li><strong>Wietrzenie:</strong> Growbagi wymagają dostępu do świeżego powietrza. Należy je otwierać i "wachlować" (wymieniać powietrze) minimum <strong>2 razy dziennie</strong>. Zapobiega to zbieraniu się CO2 na dnie torby.</li>
+            <li><strong>Wilgotność:</strong> Ścianki growbaga powinny być zroszone (mgiełka), ale nie można pryskać bezpośrednio na grzybnię.</li>
+            <li><strong>Ponowne zalanie (tzw. namaczanie/szok termiczny):</strong> Kiedy zbierzesz pierwszy rzut (tzw. flush), grzybnia jest wyschnięta. Musisz ją zalać zimną wodą (najlepiej schować do lodówki) na 12-24 godziny. Po tym czasie odlewasz wodę do zera i proces wietrzenia zaczyna się od nowa dla drugiego rzutu.</li>
+        </ul>
+
+        <a href="zla-strona.html" class="btn">Przejdź do ZŁEJ wersji strony (OSTRZEŻENIE!)</a>
+
+        <!-- WYJAŚNIENIE DLA WYKŁADOWCY -->
+        <div class="explanation">
+            <h2>Podsumowanie Projektu (Zadanie: Dostępność / Accessibility)</h2>
+            <p><strong>Strona A (Przyjazna):</strong> Zastosowano łagodne kolory, dużą interlinię i czytelną strukturę nagłówków. Dodano w pełni funkcjonalny przycisk "Trybu Wysokiego Kontrastu", który pomaga osobom słabowidzącym. Usunięto wszelkie dystraktory.</p>
+            <p><strong>Strona B (Celowo nieprzyjazna):</strong> Zaprojektowana jako symulacja przebodźcowania sensorycznego (częstego u osób w spektrum autyzmu). Tło z tekstem nie mają odpowiedniego kontrastu (biały na żółtym). Strona "mruga" negatywem co sekundę, tekst nienaturalnie drży, na stronie autoodtwarzany jest film YouTube generujący hałas. Całkowicie zepsuto nawigację – użyto <code>tabindex="-1"</code> dla blokady obsługi z klawiatury, wprowadzono horyzontalny scroll, a przycisk powrotu celowo ucieka przed kursorem.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+    </script>
+</body>
+</html>

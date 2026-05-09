@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!!! O D M I A N A M V P !!!</title>
+    <style>
+        /* Brak kontrastu i poziome przewijanie */
+        body {
+            background-color: #ffff00;
+            color: #ffffff;
+            font-family: 'Comic Sans MS', cursive;
+            width: 200vw;
+            overflow-x: scroll;
+            cursor: wait; /* Irytujący kursor "ładowania" */
+            animation: mruganie 1s infinite;
+        }
+
+        /* Przebodźcowanie: Negatyw */
+        @keyframes mruganie {
+            0% { filter: invert(0); }
+            49% { filter: invert(0); }
+            50% { filter: invert(1); }
+            100% { filter: invert(1); }
+        }
+
+        /* Drżenie tekstu (bardzo nieprzyjazne autyzmowi) */
+        @keyframes trzesienie {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        h1 {
+            font-size: 70px;
+            animation: trzesienie 0.2s infinite; /* Ekstremalne drżenie */
+        }
+
+        p {
+            font-size: 10px;
+            width: 150vw;
+            line-height: 0.5;
+            text-transform: uppercase;
+        }
+
+        /* Uciekający przycisk */
+        #powrot-btn {
+            position: absolute;
+            background: lime;
+            color: red;
+            font-size: 50px;
+            border: 10px dotted blue;
+            cursor: none;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        /* Ukryty iframe, który hałasuje */
+        .wkurzajace-audio {
+            position: fixed;
+            top: 0; left: 0; width: 1px; height: 1px; opacity: 0.01;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Placeholder YouTube (wklej dowolny link, parametr autoplay=1 odpowiada za automatyczne odtwarzanie) -->
+    <div class="wkurzajace-audio">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/n2rnWs8xw4g?autoplay=1" frameborder="0" allow="autoplay"></iframe>
+    </div>
+
+    <!-- tabidex="-1" blokuje nawigację za pomocą klawiatury (łamie zasady WCAG) -->
+    <h1 tabindex="-1">M V P N I E P U K A Z B U T A W Y W A L A Z A M E K</h1>
+
+    <p tabindex="-1">Zalewanie po zbiorach to podstawa! wietrzenie 2 razy dziennie zeby bylo powietrze. MVP 2g dziala jak 4g innych! Nie bierz za duzo bo wywala futryne! Growbagi trzeba zraszac po sciankach ale nie na same HUBY. Szok termiczny 12 godzin w lodowce! Woda na zero! i od nowa. MVP z buta wywala zamek, wjeżdża z całą futryną, a na koniec bez pytania przejmuje akt własności twojego umysłu. Zalewanie po zbiorach to podstawa! wietrzenie 2 razy dziennie zeby bylo powietrze. MVP 2g dziala jak 4g innych! Nie bierz za duzo bo wywala futryne!</p>
+
+    <button id="powrot-btn" tabindex="-1">KLIKNIJ ABY WRÓCIĆ NA NORMALNĄ STRONĘ</button>
+
+    <script>
+        // JS dla uciekającego przycisku - niszczy całkowicie możliwość kliknięcia
+        const btn = document.getElementById('powrot-btn');
+        btn.addEventListener('mouseenter', function() {
+            this.style.left = Math.random() * 80 + 'vw';
+            this.style.top = Math.random() * 80 + 'vh';
+        });
+    </script>
+</body>
+</html>
